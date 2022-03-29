@@ -1,0 +1,43 @@
+site_name: Be The Hero
+
+repo_url: https://bw3sley.github.io/gpa-calculator/
+repo_name: "GPA Calculator"
+
+theme:
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  name: material
+  language: "pt"
+  features:
+    navigation.top
+    - navigation.sections
+    - toc.integrate
+
+  palette:
+      accent: 
+
+extra_css:
+  - global.css
+
+nav:
+  - Sobre: index.md
+  - Planejamento: 
+    - Plano de negócios: planning/planning.md
+    - Análise de requisitos, regras de negócio e modelagem do projeto:
+        - Requisitos e regras de negócio: requirements/requirements.md
+        - Modelagem do projeto: requirements/use-case.md
+    - Tecnologias e ferramentas: technical-tools/technical-tools.md
+  - Prototipagem: 
+    - Wireframe: prototype/wireframe.md
+    - Protótipo alta fidelidade: prototype/prototype.md
+  - Testes do aplicativo: 
+    - Resultado dos testes: app-testing/app-testing.md
+  - Guia do usuário:
+    - Páginas: user-document/user-document.md
+
+plugins:
+  - search:
+      lang: pt
+      lang: en
+
+copyright: Copyright &copy; 2023 Wesley & Lucas & Lívia

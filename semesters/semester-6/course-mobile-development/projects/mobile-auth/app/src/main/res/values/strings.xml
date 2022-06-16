@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AuthProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment"> Se inscreva gratuitamente</string>
+</resources>

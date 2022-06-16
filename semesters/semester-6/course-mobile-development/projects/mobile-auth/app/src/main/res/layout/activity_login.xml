@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="487dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/slate_900"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Acesse sua conta"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preencha os campos com suas credenciais para entrar na plataforma"
+            android:textColor="@color/gray_400" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Usuário"
+            android:textColor="@color/gray_400"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/login_githubName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/input_background"
+            android:hint="Seu usuário do Github"
+            android:textColorHint="@color/gray_400"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Senha"
+            android:textColor="@color/gray_400"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/input_background"
+            android:hint="Sua senha"
+            android:textColorHint="@color/gray_400"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Acessar"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não tem conta? "
+                android:textColor="@color/gray_400" />
+
+            <TextView
+                android:id="@+id/loginRedirectText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text=" Se inscreva gratuitamente"
+                android:textColor="@color/roxo_medio_background" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

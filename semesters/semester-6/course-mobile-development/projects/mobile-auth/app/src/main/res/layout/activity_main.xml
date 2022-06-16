@@ -1,0 +1,101 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:background="@color/slate_900">
+
+    <!-- Container para os elementos da tela -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Foto do perfil -->
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@null"
+            android:src="@drawable/baseline_exit_to_app_24"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/githubAvatarImageView"
+            android:layout_width="148dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_image"
+            android:contentDescription="Foto do Perfil"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/githubNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_gravity="center" />
+
+        <!-- TextView para exibir a bio do usuário -->
+        <TextView
+            android:id="@+id/bioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/connectApiButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:text="Conectar com API"
+            android:textColor="@color/white"
+            android:layout_gravity="center" />
+
+        <!-- ProgressBar para indicar carregamento -->
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_gravity="center" />
+
+        <!-- Container de dados do GitHub -->
+        <LinearLayout
+            android:id="@+id/githubDataContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

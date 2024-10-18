@@ -15,8 +15,6 @@ html, body {
     background-color: #121214;
     color: #fafafa;
 
-    font-family: monospace;
-
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -25,6 +23,12 @@ html, body {
 
     max-width: 960px;
     margin-inline: auto;
+}
+
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: monospace;
 }
 
 a {
@@ -87,9 +91,20 @@ a {
     gap: 1rem;
 }
 
+.description p {
+    text-align: justify;
+
+    line-height: 1.625;
+}
+
 .title {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.go-back {
+    color: orange;
+
+    text-decoration: underline;
 }

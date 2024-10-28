@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Postagens Recentes</h2>
+{% for post in posts %}
+<div>
+    <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
+    <p>{{ post.summary }}</p>
+    {% if post.featured_image %}
+    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+    {% else %}
+    <img src="/static/images/placeholder.jpg" alt="Imagem Padrão">
+    {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

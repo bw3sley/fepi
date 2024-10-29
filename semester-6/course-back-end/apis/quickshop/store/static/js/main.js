@@ -1,1 +1,1 @@
-console.log("carreguei");
+console.log("🎉 DOM loaded!");

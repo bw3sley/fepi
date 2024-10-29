@@ -14,6 +14,6 @@ class Command(BaseCommand):
                 description=fake.text(),
                 price=round(random.uniform(10, 100), 2),
                 discount=round(random.uniform(5, 50), 2) if random.choice([True, False]) else None,
-                image='products/default.jpg',
+                image='store/static/imgs/default.jpg',
             )
         self.stdout.write(self.style.SUCCESS('Produtos fictícios criados com sucesso!'))

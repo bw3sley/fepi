@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Meu Carrinho</h2>
+
+    <div class="cart-product-wrapper">
+        {% for product in products %}
+            <div class="cart-product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                
+                <div class="cart-product-info">
+                    <h3>{{ product.name }}</h3>
+                    
+                    {% if product.discount %}
+                        <p>R$ {{ product.discount|floatformat:2 }}</p>
+                    {% else %}
+                        <p>R$ {{ product.price|floatformat:2 }}</p>
+                    {% endif %}
+                </div>
+
+                <a href="{% url 'remove_from_cart' product.pk %}" class="remove-from-cart">
+                    <i class="ph ph-trash-simple"></i>
+                </a>
+            </div>
+        {% empty %}
+            <p>Seu carrinho está vazio.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

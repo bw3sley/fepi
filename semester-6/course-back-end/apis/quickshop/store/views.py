@@ -3,11 +3,11 @@ from .models import Product
 
 def product_list(request):
     products = Product.objects.all()
-    return render(request, 'store/product_list.html', {'products': products})
+    return render(request, 'product_list.html', {'products': products})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    return render(request, 'store/product_detail.html', {'product': product})
+    return render(request, 'product_detail.html', {'product': product})
 
 def add_to_cart(request, pk):
     cart = request.session.get('cart', [])
@@ -26,4 +26,4 @@ def remove_from_cart(request, pk):
 def view_cart(request):
     cart = request.session.get('cart', [])
     products = Product.objects.filter(pk__in=cart)
-    return render(request, 'store/cart.html', {'products': products})
+    return render(request, 'cart.html', {'products': products})

@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechTales Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% load static %}
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    
+    <title>techtales</title>
 </head>
 <body>
     <header>
-        <h1>TechTales Blog</h1>
-        <nav>
-            <a href="/">Home</a>
-        </nav>
+        <a href="/">techtales</a>
+
+        <div>
+            <button type="button" class="log-in">Log In</button>
+            <button type="button" class="sign-up">Sign up</button>
+        </div>
     </header>
 
     <main>
@@ -18,7 +27,9 @@
     </main>
 
     <footer>
-        <p>TechTales &copy; 2024</p>
+        <p>&copy; 2024 techtales. All rights reserved.</p>
     </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

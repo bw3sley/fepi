@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>{{ post.title }}</h2>
-<p><strong>Publicado em:</strong> {{ post.published_date }}</p>
-<div>
+<div class="blog-content">
     {% if post.featured_image %}
     <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
     {% endif %}
+
+    <div class="blog-content-info">
+        <h2>{{ post.title }}</h2>
+        
+        <p>
+            <strong>Publicado em:</strong> 
+            {{ post.published_date }}
+        </p>
+    </div>
+    
     <p>{{ post.content }}</p>
 </div>
 {% endblock %}

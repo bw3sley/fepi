@@ -1,16 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Postagens Recentes</h2>
+<section class="hero">
+    <div class="form">
+        <h1>techtales</h1>
+
+        <form method="POST">
+            <div>
+                <input type="email" placeholder="Enter your e-mail" name="" id="" />
+
+                <button type="submit">Subscribe</button>
+            </div>
+        </form>
+    </div>
+
+    <p>New product features, the latest in technology, solution, and updates.</p>
+</section>
+
+<section class="posts-wrapper">
 {% for post in posts %}
-<div>
-    <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
-    <p>{{ post.summary }}</p>
+<div class="blog">
     {% if post.featured_image %}
     <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
     {% else %}
-    <img src="/static/images/placeholder.jpg" alt="Imagem Padrão">
+    <img src="/blog/static/imgs/placeholder.jpg" alt="Imagem Padrão">
     {% endif %}
+    
+    <div class="info">
+        <h3>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </h3>
+        
+        <p class="description">{{ post.summary }}</p>
+
+        <a href="{% url 'post_detail' post.id %}">
+            Read post
+
+            <i class="ph ph-arrow-up-right"></i>
+        </a>
+    </div>
 </div>
 {% endfor %}
+</section>
 {% endblock %}

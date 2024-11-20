@@ -311,7 +311,7 @@ function generateCode(node) {
     }
 
     else if (node.type === "UnaryOp") {
-        return `(${node.operator}${generateCode(node.right)})`;
+        return `(${node.operator}${generateCode(node.operand)})`;
     }
 
     else {
@@ -366,4 +366,8 @@ if (require.main === module) {
         console.log(error);
         console.error("An error occurred while compiling the '.math' expression");
     }
+}
+
+module.exports = {
+    compileMath
 }

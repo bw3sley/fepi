@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Our brand new products</h2>
+
+    <div class="product-wrapper">
+        {% for product in products %}
+
+            <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    
+                    {% if product.discount %}
+                        <p>
+                            <del>R$ {{ product.price|floatformat:2 }}</del>
+                            R$ {{ product.discount|floatformat:2 }}
+                        </p>
+                    {% else %}
+                        <p>R$ {{ product.price|floatformat:2 }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="product-actions">
+                    <a href="{% url 'add_to_cart' product.pk %}" class="add-to-cart">Adicionar ao Carrinho</a>
+                    <a href="{% url 'product_detail' product.pk %}" class="see-details">Ver Detalhes</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

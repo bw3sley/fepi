@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% load static %}
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <title>quickstop</title>
+</head>
+<body>
+    <div id="app">
+        <div class="banner">
+            <p>Get 25% Off This Summer Sale. Grab It Fast!</p>
+            <strong>15H:45M:37S</strong>
+        </div>
+    
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Men</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#">Women</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Kids</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <h1>quickstop</h1>
+    
+            <nav>
+                <a href="{% url 'view_cart' %}" class="cart" data-counter="{{ request.session.cart|length }}">
+                    <i class="ph ph-shopping-cart"></i>
+                </a>
+    
+                <button type="button">Login</button>
+            </nav>
+        </header>
+    
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 QuickShop</p>
+    
+            <ul>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Policy</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --blue-500: #1a237e;
+
+    --purple-500: #4527a0;
+
+    --pink-500: #d500f9;
+
+    --gray-100: #fafafa;
+    --gray-300: #aaaaaa;
+    --gray-700: #3a444d;
+    --gray-800: #444444;
+    --gray-900: #333333;
+    --gray-000: #222222;
+
+    --shadow-dark: #888888;
+    --shadow-light: #333333;
+
+    --black: #000000;
+    --white: #ffffff;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: linear-gradient(to bottom, #6ab7f5, #c5e5ff);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    max-width: 640px;
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+body, button {
+    font-weight: 400;
+    font-size: 1rem;
+
+    font-family: "Oxanium", monospace;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    font-weight: 600;
+    text-align: center;
+
+    
+    text-wrap: pretty;
+}
+
+.text h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+
+    color: var(--gray-000);
+    
+    letter-spacing: -0.05em;
+}
+
+.text p {
+    font-size: 1.25rem;
+
+    line-height: 1.625;
+
+    color: var(--gray-800);
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+
+    text-decoration: none;
+
+    padding: .75rem;
+    
+    font-size: clamp(.5rem, 1.5rem, 1rem);
+    font-weight: 600;
+    
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    
+    background-color: var(--gray-800);
+    color: var(--white);
+
+    box-shadow: -2px 3px 0 var(--gray-000), -4px 6px 0 var(--black);
+
+    cursor: pointer;
+
+    font-size: 1.25rem;
+
+    transition: background 100ms;
+}
+
+.button:hover {
+    background-color: var(--gray-900);
+}
+
+.button:active {
+    box-shadow: inset -4px 4px 0 var(--gray-000);
+
+    font-size: 1rem;
+}

@@ -215,3 +215,13 @@ footer {
 
     font-size: .875rem;
 }
+
+/*  */
+
+.search-input {
+    display: block;
+    width: 100%;
+    padding: .75rem;
+    border-radius: 6px;
+    border: 1px solid #71717a;
+}

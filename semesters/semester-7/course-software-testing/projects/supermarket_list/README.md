@@ -8,7 +8,7 @@
 
    Data    | Versão |    Descrição   | Autor(a)
 -----------|--------|----------------|-----------------
-15/03/2025 |  1.0   | Release inicial | Equipe de Testes
+15/03/2025 |  1.0   | Release inicial | Toda a equipe
 
 ## 1 - Introdução
 

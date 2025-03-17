@@ -15,6 +15,7 @@
 Este documento descreve os requisitos a testar, os tipos de testes definidos para cada iteração, os recursos de hardware e software a serem empregados e o cronograma dos testes ao longo do projeto. As seções referentes aos requisitos, recursos e cronograma servem para permitir ao gerente do projeto acompanhar a evolução dos testes.
 
 Com esse documento, você deve:
+
 - Identificar informações de projeto existentes e os componentes de software que devem ser testados.
 - Listar os Requisitos a testar.
 - Recomendar e descrever as estratégias de teste a serem empregadas.
@@ -27,41 +28,40 @@ Esta seção deve conter os casos de uso e requisitos não funcionais identifica
 
 ### Casos de uso:
 
-Identificador do caso de uso | Nome do caso de uso
------------------------------|---------------------
-UC01 | Adicionar Produto à Lista
-UC02 | Marcar Produto Como Comprado
-UC03 | Excluir Produto da Lista
-UC04 | Limpar Lista
+| Identificador do caso de uso | Nome do caso de uso |
+| ---------------------------- | ------------------- |
+| UC01 | Adicionar Produto à Lista |
+| UC02 | Marcar Produto Como Comprado |
+| UC03 | Excluir Produto da Lista |
+| UC04 | Limpar Lista |
 
 ### Requisitos não-funcionais:
 
-Identificador do requisito   | Nome do requisito
------------------------------|---------------------
-RNF01 | Persistência de dados
-RNF02 | Performance aceitável
+| Identificador do requisito | Nome do requisito |
+| -------------------------- | ----------------- |
+| RNF01 | Persistência de dados |
+| RNF02 | Performance aceitável |
 
 ## 3 - Tipos de teste
 
 Os seguintes tipos de testes serão realizados:
 
-- **Teste de Unidade**
-- **Teste de Integração**
-- **Teste de Sistema**
-- **Teste de Aceitação**
-- **Teste de Regressão**
-- **Teste de Carga**
+- **Teste de unidade**: verifica se funções específicas (como adicionar ou remover item) funcionam corretamente de forma isolada.
+- **Teste de integração**: garante que diferentes partes do sistema (ex: adicionar item e depois recuperar) funcionam bem em conjunto.
+- **Teste de sistema**: avalia o comportamento geral da aplicação como um todo (não implementado diretamente no código atual).
+- **Teste de aceitação**: simula um fluxo completo do ponto de vista do usuário para garantir que a aplicação atende aos requisitos.
+- **Teste de regressão**: confirma que funcionalidades que já estavam funcionando continuam corretas após mudanças no código.
+- **Teste de carga**: verifica se o sistema se mantém estável ao lidar com grandes volumes de dados (ex: 10.000 itens na lista).
 
 ### 3.1 - Métodos da Classe
 
-Para teste de funcionalidade.
-Aqui deve-se verificar se cada função retorna o esperado. Se possível, usar testes automatizados.
+Aqui deve-se verificar se cada função retorna o esperado.
 
 | Objetivo | Garantir o correto funcionamento das funções |
 |----------|------------------------------------------|
 | Técnica  | ( ) Manual (x) Automática |
-| Estágio do teste | Unidade (x) Integração ( ) Sistema ( ) Aceitação ( ) |
-| Abordagem do teste | Caixa branca (x) Caixa preta (x) |
+| Estágio do teste | (x) Unidade ( ) Integração ( ) Sistema ( ) Aceitação |
+| Abordagem do teste | (x) Caixa branca (x) Caixa preta |
 | Responsável(is) | Lucas Faria e Wesley Júnior |
 
 ### 3.2 - Persistência de Dados
@@ -71,8 +71,8 @@ Para testar a integridade de dados e garantir que as informações não sejam pe
 | Objetivo | Verificar se os dados são mantidos após encerramento inesperado |
 |----------|------------------------------------------------------|
 | Técnica  | (x) Manual (x) Automática |
-| Estágio do teste | Unidade ( ) Integração ( ) Sistema (x) Aceitação ( ) |
-| Abordagem do teste | Caixa branca ( ) Caixa preta (x) |
+| Estágio do teste | ( ) Unidade ( ) Integração (x) Sistema ( ) Aceitação |
+| Abordagem do teste | ( ) Caixa branca (x) Caixa preta |
 | Responsável(is) | Lucas Faria e Wesley Júnior |
 
 ### 3.3 - Integração dos Componentes
@@ -83,7 +83,7 @@ Testar a comunicação entre diferentes funções do sistema.
 |----------|-----------------------------------------|
 | Técnica  | (x) Manual (x) Automática |
 | Estágio do teste | Unidade ( ) Integração (x) Sistema ( ) Aceitação ( ) |
-| Abordagem do teste | Caixa branca (x) Caixa preta (x) |
+| Abordagem do teste | (x) Caixa branca (x) Caixa preta |
 | Responsável(is) | Júlia Rodrigues e Lucas Gorgulho |
 
 ### 3.4 - Tempo de Resposta
@@ -93,9 +93,9 @@ Verificar se o tempo de resposta do programa é aceitável.
 | Objetivo | Avaliar a performance do programa |
 |----------|----------------------------------|
 | Técnica  | ( ) Manual (x) Automática |
-| Estágio do teste | Unidade ( ) Integração ( ) Sistema (x) Aceitação ( ) |
-| Abordagem do teste | Caixa branca ( ) Caixa preta (x) |
-| Responsável(is) | Gabriel Gorgulho e Lucas Faria |
+| Estágio do teste | ( ) Unidade ( ) Integração (x) Sistema ( ) Aceitação |
+| Abordagem do teste | ( ) Caixa branca (x) Caixa preta |
+| Responsável(is) | Gabriel Gorgulho e Lívia Faria |
 
 ### 3.5 - Teste de Carga
 
@@ -104,9 +104,20 @@ Avaliar como o sistema se comporta ao lidar com grandes volumes de dados.
 | Objetivo | Verificar se o sistema mantém a estabilidade ao processar um grande número de itens |
 |----------|-----------------------------------------------|
 | Técnica  | ( ) Manual (x) Automática |
-| Estágio do teste | Unidade ( ) Integração ( ) Sistema (x) Aceitação ( ) |
+| Estágio do teste | ( ) Unidade ( ) Integração (x) Sistema ( ) Aceitação |
 | Abordagem do teste | Caixa branca ( ) Caixa preta (x) |
-| Responsável(is) | Wesley Júnior e Júlia Rodrigues |
+| Responsável(is) | Lucas Faria e Wesley Júnior |
+
+### 3.6 - Teste de Regressão
+
+Garantir que funcionalidades que já estavam implementadas continuam funcionando corretamente após alterações no sistema.
+
+| Objetivo | Validar que funcionalidades antigas permanecem estáveis após modificações |
+|----------|---------------------------------------------------------------------------|
+| Técnica  | ( ) Manual (x) Automática |
+| Estágio do teste | (x) Unidade (x) Integração ( ) Sistema ( ) Aceitação |
+| Abordagem do teste | (x) Caixa branca (x) Caixa preta |
+| Responsável(is) | Lucas Faria e Wesley Júnior |
 
 ## 4 - Recursos
 
@@ -120,7 +131,6 @@ Avaliar como o sistema se comporta ao lidar com grandes volumes de dados.
 ### 4.2 - Ferramenta de teste
 
 - **Pytest** para testes automatizados.
-- **GitHub Actions** para integração contínua dos testes.
 
 ## 5 - Cronograma
 

@@ -126,3 +126,12 @@ def test_fluxo_completo():
     assert shopping_list.mark_as_bought("Pão") == "Item 'Pão' marcado como comprado."
     assert shopping_list.remove_item("Pão") == "Item 'Pão' removido da lista."
     assert shopping_list.get_list() == []
+
+# Testes de Regressão
+@pytest.mark.regression
+def test_regressao_remocao_e_adicao():
+    shopping_list = ShoppingList(TEST_DB_FILE)
+    shopping_list.add_item("Café")
+    shopping_list.remove_item("Café")
+    response = shopping_list.add_item("Café")
+    assert response == "Item 'Café' adicionado com sucesso."

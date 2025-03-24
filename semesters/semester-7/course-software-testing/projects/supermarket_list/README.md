@@ -30,10 +30,10 @@ Esta seção deve conter os casos de uso e requisitos não funcionais identifica
 
 | Identificador do caso de uso | Nome do caso de uso |
 | ---------------------------- | ------------------- |
-| UC01 | Adicionar Produto à Lista |
-| UC02 | Marcar Produto Como Comprado |
-| UC03 | Excluir Produto da Lista |
-| UC04 | Limpar Lista |
+| UC01 | Adicionar produto à lista |
+| UC02 | Marcar produto como comprado |
+| UC03 | Excluir produto da lista |
+| UC04 | Limpar lista |
 
 ### Requisitos não-funcionais:
 

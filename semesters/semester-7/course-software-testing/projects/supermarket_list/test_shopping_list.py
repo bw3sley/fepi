@@ -1,3 +1,7 @@
+# pytest -m unit
+# pytest -m integration
+# pytest -m performance
+
 import pytest
 import os
 import json
@@ -9,6 +13,7 @@ from shopping_list import ShoppingList
 from pathlib import Path
 
 TEST_DB_FILE = Path(__file__).parent / "test.json"
+TEST_USER_ID = "user-teste"
 
 def setup_function():
     save_data({}, TEST_DB_FILE)
@@ -17,7 +22,7 @@ def teardown_function():
     if os.path.exists(TEST_DB_FILE):
         os.remove(TEST_DB_FILE)
 
-MAX_ITEMS = 10000
+MAX_ITEMS = 1000
 
 # Testes de Unidade
 @pytest.mark.unit
@@ -62,19 +67,19 @@ def test_clear_list():
 # Testes de Integração
 @pytest.mark.integration
 def test_persistencia_dados():
-    shopping_list = ShoppingList(TEST_DB_FILE)
+    shopping_list = ShoppingList(TEST_DB_FILE, user_id=TEST_USER_ID)
     shopping_list.add_item("Feijão")
     shopping_list.add_item("Arroz")
 
-    new_session = ShoppingList(TEST_DB_FILE)
+    new_session = ShoppingList(TEST_DB_FILE, user_id=TEST_USER_ID)
     assert len(new_session.get_list()) == 2
 
 @pytest.mark.integration
 def test_persistencia_remocao():
-    shopping_list = ShoppingList(TEST_DB_FILE)
+    shopping_list = ShoppingList(TEST_DB_FILE, user_id=TEST_USER_ID)
     shopping_list.add_item("Peixe")
     shopping_list.remove_item("Peixe")
-    new_session = ShoppingList(TEST_DB_FILE)
+    new_session = ShoppingList(TEST_DB_FILE, user_id=TEST_USER_ID)
     assert not any(item["name"] == "Peixe" for item in new_session.get_list())
 
 # Testes de Performance

@@ -1,9 +1,9 @@
 from database import load_data, save_data, get_user_id
 
 class ShoppingList:
-    def __init__(self, db_path=None, test_mode=False):
-        self.user_id = get_user_id(test_mode)  # Usa um ID fixo se for teste
+    def __init__(self, db_path=None, user_id=None):
         self.db_path = db_path
+        self.user_id = user_id or get_user_id()
         self.data = load_data(self.db_path)
         self.list = self.data.get(self.user_id, [])
 
